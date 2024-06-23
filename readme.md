@@ -59,6 +59,7 @@ echo -en "\xFF\xFE" | xxd # little-endian
 ## sample
 
 ```sh
+
 echo -en "\x00\x00\x00\x01" | \
 od -tx4 -An -v --endian=big | \
 tr ' ' '\n' | \
@@ -67,4 +68,5 @@ xargs -n1 -I{} printf '%d\n' 0x{}
 od -tx4 -An -v --endian=big ./sample.dat | \
 tr ' ' '\n' | \
 xargs -n1 -I{} printf '%d\n' 0x{}
+
 ```
